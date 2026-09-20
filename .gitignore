@@ -1,0 +1,19 @@
+# 视频素材不入库
+*.mp4
+成片/
+参考视频.mp4
+
+# 拆片时的中间产物
+_分析素材/
+
+# 本地调参草稿
+desktop-outfit-video/prompt.txt
+prompt.txt
+
+# 密钥
+.env
+.env.*
+
+__pycache__/
+*.pyc
+.DS_Store
