@@ -31,7 +31,7 @@
 
 ### 2. 让 AI 采访你，帮你写提示词
 
-如果想换题材（换人物、换场景、换三套造型），不用自己改模板。打开 [元提示词.md](desktop-outfit-video/元提示词.md)，复制整段贴进豆包 / DeepSeek / ChatGPT / Claude 任意一家，它会反过来问你六个问题，然后吐出一条填好的完整提示词。
+如果想换题材（换人物、换场景、换三套造型），不用自己改模板。打开 [元提示词.md](skills/desktop-outfit-video/元提示词.md)，复制整段贴进豆包 / DeepSeek / ChatGPT / Claude 任意一家，它会反过来问你六个问题，然后吐出一条填好的完整提示词。
 
 六个问题分别是：主角、场景、三套造型、对白、尺度、时长。每个都有默认值，全部回车就是原版复刻。
 
@@ -41,7 +41,7 @@
 
 ```bash
 git clone https://github.com/liyupi/ai-desktop-outfit-video.git
-cp -r ai-desktop-outfit-video/desktop-outfit-video ~/.cursor/skills/
+cp -r ai-desktop-outfit-video/skills/desktop-outfit-video ~/.cursor/skills/
 ```
 
 之后直接说「帮我做一个桌面换装视频」就会触发。Skill 会先问清需求、生成提示词，再问你是自己复制去即梦用，还是直接调 API 出片。
@@ -69,7 +69,7 @@ cp -r ai-desktop-outfit-video/desktop-outfit-video ~/.cursor/skills/
 pip install arkruntime requests
 export ARK_API_KEY=你的key
 
-python desktop-outfit-video/scripts/seedance.py \
+python skills/desktop-outfit-video/scripts/seedance.py \
   --model 你的接入点ID \
   --prompt-file prompt.txt \
   --out output.mp4
@@ -90,12 +90,13 @@ python desktop-outfit-video/scripts/seedance.py \
 
 ```
 .
-├── 提示词.md                      三步复刻提示词，复制即用
-├── desktop-outfit-video/          Agent Skill，可直接拷进 ~/.cursor/skills/
-│   ├── SKILL.md                   工作流：六问 → 填模板 → 问用户怎么用
-│   ├── 元提示词.md                 可分发版，任何 AI 都能跑
-│   └── scripts/seedance.py        火山方舟 Seedance API 调用脚本
-└── assets/                        README 配图
+├── 提示词.md                          三步复刻提示词，复制即用
+├── skills/
+│   └── desktop-outfit-video/          拷进 ~/.cursor/skills/ 即可使用
+│       ├── SKILL.md                   工作流：六问 → 填模板 → 问用户怎么用
+│       ├── 元提示词.md                 可分发版，任何 AI 都能跑
+│       └── scripts/seedance.py        火山方舟 Seedance API 调用脚本
+└── assets/                            README 配图
 ```
 
 ## 避坑
